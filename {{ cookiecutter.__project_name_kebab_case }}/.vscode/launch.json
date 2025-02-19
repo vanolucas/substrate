@@ -8,11 +8,12 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "api:app",
+                "{{ project_name_snake_case }}.api:app",
                 "--reload"
             ],
             "jinja": true,
-            "justMyCode": true
+            "justMyCode": true,
+            "console": "integratedTerminal"
         },
         {%- endif %}
         {%- if with_typer_cli %}
@@ -25,19 +26,10 @@
                 "--name",
                 "Someone"
             ],
-            "justMyCode": true
-        },
-        {%- endif %}
-        {
-            "name": "pytest [debug]",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${file}",
-            "purpose": [
-                "debug-test"
-            ],
+            "justMyCode": true,
             "console": "integratedTerminal"
         },
+        {%- endif %}
         {
             "name": "Python file [debug]",
             "type": "debugpy",
