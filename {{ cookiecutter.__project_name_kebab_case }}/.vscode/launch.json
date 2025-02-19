@@ -15,6 +15,19 @@
             "justMyCode": true
         },
         {%- endif %}
+        {%- if with_typer_cli %}
+        {
+            "name": "CLI [debug]",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}//src//{{ project_name_snake_case }}//cli.py",
+            "args": [
+                "--name",
+                "Someone"
+            ],
+            "justMyCode": true
+        },
+        {%- endif %}
         {
             "name": "pytest [debug]",
             "type": "debugpy",
