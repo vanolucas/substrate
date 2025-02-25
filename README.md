@@ -148,3 +148,26 @@ The following development environments are supported:
 - Run `cz bump` to bump Substrate's version, update the `CHANGELOG.md`, and create a git tag. Then push the changes and the git tag with `git push origin main --tags`.
 
 </details>
+
+<details open>
+<summary>Importing updates from upstream repo</summary>
+
+```sh
+# Add the upstream repo as a Git remote.
+git remote add upstream git@github.com:vanolucas/substrate.git
+# Create a new branch where we will import upstream changes.
+git checkout main && git checkout -b upstream-updates
+# Pull changes from main branch of the upstream repo.
+git pull --no-rebase upstream main
+# Fix conflict(s) if any (e.g. using VS Code).
+code .
+# Push this branch to our server.
+git push --set-upstream origin upstream-updates
+# Open a pull request to merge the upstream-updates branch into main.
+# You can then delete your local branch.
+git checkout main && git branch -D upstream-updates
+# And pull the updated main from server.
+git pull
+```
+
+</details>
