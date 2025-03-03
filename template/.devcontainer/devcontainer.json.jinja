@@ -15,19 +15,11 @@
     "customizations": {
         "jetbrains": {
             "backend": "PyCharm",
-            "plugins": [
-                "com.github.copilot"
-            ]
+            "plugins": []
         },
         "vscode": {
             "extensions": [
                 "charliermarsh.ruff",
-                {%- if ci == 'github' %}
-                "GitHub.vscode-github-actions",
-                "GitHub.vscode-pull-request-github",
-                {%- elif ci == 'gitlab' %}
-                "GitLab.gitlab-workflow",
-                {%- endif %}
                 "ms-python.mypy-type-checker",
                 "ms-python.python",
                 "ms-toolsai.jupyter",

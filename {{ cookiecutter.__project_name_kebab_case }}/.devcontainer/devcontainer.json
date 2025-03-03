@@ -9,9 +9,7 @@
     "customizations": {
         "jetbrains": {
             "backend": "PyCharm",
-            "plugins": [
-                "com.github.copilot"
-            ],
+            "plugins": [],
             "settings": {
               "org.jetbrains.plugins.terminal:app:TerminalOptionsProvider.myShellPath": "/usr/bin/zsh"
             }
@@ -19,12 +17,6 @@
         "vscode": {
             "extensions": [
                 "charliermarsh.ruff",
-                {%- if cookiecutter.continuous_integration == "GitHub" %}
-                "GitHub.vscode-github-actions",
-                "GitHub.vscode-pull-request-github",
-                {%- elif cookiecutter.continuous_integration == "GitLab" %}
-                "GitLab.gitlab-workflow",
-                {%- endif %}
                 "ms-python.mypy-type-checker",
                 "ms-python.python",
                 "ms-toolsai.jupyter",
