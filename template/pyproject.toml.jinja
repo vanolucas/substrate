@@ -158,6 +158,7 @@ type = "simple"
 
   [tool.poe.tasks.serve]
   help = "Serve the REST API"
+  envfile = ".env"
   shell = """
     if [ $dev ]
     then {
@@ -202,6 +203,7 @@ type = "simple"
 
   [tool.poe.tasks.serve]
   help = "Serve the app"
+  envfile = ".env"
 
     [[tool.poe.tasks.serve.sequence]]
     cmd = "echo 'Serving app (placeholder)...'"
@@ -238,6 +240,7 @@ type = "simple"
 
   [tool.poe.tasks.test]
   help = "Test this {{ project_type }}"
+  envfile = ".env"
 
     [[tool.poe.tasks.test.sequence]]
     cmd = "coverage run"
