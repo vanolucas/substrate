@@ -18,6 +18,17 @@
         {%- endif %}
         {%- if with_typer_cli %}
         {
+            "name": "CLI [help]",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}//src//{{ project_name_snake_case }}//cli.py",
+            "args": [
+                "--help"
+            ],
+            "justMyCode": true,
+            "console": "integratedTerminal"
+        },
+        {
             "name": "CLI [debug]",
             "type": "debugpy",
             "request": "launch",
