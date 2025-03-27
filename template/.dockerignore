@@ -1,6 +1,9 @@
 # Caches
 .*_cache/
 
+# Environment variables
+.env
+
 # Git
 .git/
 
